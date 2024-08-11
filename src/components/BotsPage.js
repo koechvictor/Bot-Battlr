@@ -11,7 +11,7 @@ function BotsPage() {
     const [botSpecs, setBotSpecs] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:3000/bots")
+        fetch("https://bot-battlr-server-sowp.onrender.com/bots")
             .then((res) => res.json())
             .then((bots) => {
                 setBotCollection(bots);
@@ -48,7 +48,7 @@ function BotsPage() {
         setFilteredCollection(newFilteredCollection);
         setBotArmy(newArmy);
 
-        fetch(`http://localhost:3000/bots/${bot.id}`, {
+        fetch(`https://bot-battlr-server-sowp.onrender.com/bots/${bot.id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
